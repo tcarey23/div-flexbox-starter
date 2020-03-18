@@ -99,13 +99,39 @@ textarea {
 html {
   background-color: #5c6670;
   height: 100%;
+  width: 100%;
 }
 
 body {
   font-family: 'Source Sans Pro', sans-serif;
   padding: 2em;
   font-size: 1.25em;
-  height: 100%;
+  display: flex;
+  justify-content: center;
+ }
+
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-start;
+  font-size: 2em;
+  color: #fff;
+  width: 100%;
+}
+
+.intro{
+  display: flex;
+  justify-content: center;
+  color: #fff;
+  font-size: 1em;
+  border-bottom: 1px solid #fff;
+  width: 100%;
 }
 
 .wrapper {
@@ -114,28 +140,29 @@ body {
   display: flex;
   justify-content: space-between;
   flex-flow: row wrap;
+  width: 100%;
 }
 
-.div-1, .div-2, .div-3 {
+.flex-items{
   /*give the divs a width of 30%, add display:flex, set justify-content and align-items to center*/
   color: #fff;
   line-height: 1.5em;
-  font-size: 1.4em;
+  font-size: 1.2em;
   background-color:#5c6670;
-  height: 300px;
   display: flex;
   justify-content: center;
-  width: 30%;
   align-items: center;
-}
-
-.div-2 {
-  padding: 1em;
-  border-right: .125em solid #fff;
-  border-left:  .125em solid #fff;
+  border-bottom: 1px solid #fff;
 }
 
 
+.footer{
+  display: flex;
+  justify-content: flex-start;
+  border-top: 1px solid #fff;
+  padding: 10px;
+  width: 100%
+}
 
 
 /* ==========================================================================
@@ -217,6 +244,25 @@ body {
    These examples override the primary ('mobile first') styles.
    Modify as content requires.
    ========================================================================== */
+
+@media all and (max-width: 768px) {
+    body {
+      padding: 1em;
+    }
+}
+
+@media (min-width: 1200px) {
+    .flex-items {
+      flex-basis: 30%;
+      border-bottom: none;
+    }
+
+    #div-2 p {
+      border-left: 1px solid #fff;
+      border-right: 1px solid #fff;
+      padding: 0 40px;
+    }
+}
 
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
